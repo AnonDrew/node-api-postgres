@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AnonDrew/node-api-postgres#readme",
   "description": "RESTful API with Node.js, Express, and PostgreSQL",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "pg": "^8.15.6"
   }
