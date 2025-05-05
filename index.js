@@ -26,3 +26,15 @@ app.delete('/users/:id', db.deleteUser)
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })
+
+// Simulates an error to pass down
+app.use((req, res, next) => {
+  const error = new Error('Something went wrong');
+  next(error);
+});
+
+// Error-handling Middleware
+app.use((err, req, res, next) => {
+  console.error('Error:', err.message);
+  res.status(500).send('Internal Server Error');
+});
